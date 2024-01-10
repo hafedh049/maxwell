@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:maxwell/utils/globals.dart';
-import 'package:webview_flutter_android/webview_flutter_android.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Viewer extends StatefulWidget {
   const Viewer({super.key, required this.expression});
