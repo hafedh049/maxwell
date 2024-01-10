@@ -13,31 +13,23 @@ class Lister extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          SliverAppBar(
-            centerTitle: true,
-            leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Bootstrap.chevron_left, size: 15, color: pink)),
-            title: Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: pink)),
-          ),
-          const SizedBox(height: 10),
-          if (items.isNotEmpty)
-            Expanded(
-              child: ListView.separated(
-                padding: const EdgeInsets.all(16),
-                physics: const BouncingScrollPhysics(),
-                itemBuilder: (BuildContext context, int index) => GestureDetector(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Viewer(expression: items[index]["expression"]))),
-                  child: Item(item: items[index]),
-                ),
-                separatorBuilder: (BuildContext context, int index) => Container(width: MediaQuery.sizeOf(context).width, height: .5, color: grey, margin: const EdgeInsets.symmetric(vertical: 8)),
-                itemCount: items.length,
-              ),
-            )
-          else
-            const Empty(),
-        ],
+      appBar: AppBar(
+        centerTitle: true,
+        leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Bootstrap.chevron_left, size: 15, color: pink)),
+        title: Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: pink)),
       ),
+      body: items.isNotEmpty
+          ? ListView.separated(
+              padding: const EdgeInsets.all(16),
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) => GestureDetector(
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Viewer(expression: items[index]["expression"]))),
+                child: Item(item: items[index]),
+              ),
+              separatorBuilder: (BuildContext context, int index) => Container(width: MediaQuery.sizeOf(context).width, height: .5, color: grey, margin: const EdgeInsets.symmetric(vertical: 8)),
+              itemCount: items.length,
+            )
+          : const Empty(),
     );
   }
 }
