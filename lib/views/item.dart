@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:maxwell/utils/globals.dart';
@@ -17,7 +16,7 @@ class _ItemState extends State<Item> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: grey.withOpacity(.1), border: Border.all(color: grey, width: .5), borderRadius: BorderRadius.circular(15)),
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(16),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -26,17 +25,13 @@ class _ItemState extends State<Item> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Flexible(child: Math.tex(widget.item["title"], textStyle: const TextStyle(fontSize: 16, color: white))),
+                Flexible(child: Text(widget.item["title"], style: const TextStyle(fontSize: 16, color: white, fontWeight: FontWeight.w500))),
                 const SizedBox(height: 10),
-                Flexible(child: Math.tex(widget.item["expression"], textStyle: const TextStyle(fontSize: 14, color: white))),
-                if (!_isOpened)
-                  ...AnimateList(
-                    effects: <Effect>[const FadeEffect()],
-                    children: <Widget>[
-                      const SizedBox(height: 10),
-                      Flexible(child: Math.tex(widget.item["description"], textStyle: const TextStyle(fontSize: 12, color: white))),
-                    ],
-                  ),
+                Flexible(child: Math.tex(widget.item["expression"], textStyle: const TextStyle(fontSize: 16, color: white, fontWeight: FontWeight.w500))),
+                if (_isOpened) ...<Widget>[
+                  const SizedBox(height: 10),
+                  Flexible(child: Text(widget.item["description"], style: const TextStyle(fontSize: 12, color: white, fontWeight: FontWeight.w500))),
+                ],
               ],
             ),
           ),
