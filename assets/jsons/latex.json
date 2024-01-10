@@ -1,0 +1,35 @@
+{
+    "Mathematics": [
+        {
+            "title": "Pythagorean Theorem",
+            "description": "Relates the lengths of the sides of a right triangle.",
+            "expression": "a^2 + b^2 = c^2"
+        },
+        {
+            "title": "Euler's Identity",
+            "description": "An equation combining five fundamental mathematical constants.",
+            "expression": "e^{i\\pi} + 1 = 0"
+        },
+        {
+            "title": "Quadratic Formula",
+            "description": "Gives the solutions to the quadratic equation ax^2 + bx + c = 0.",
+            "expression": "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}"
+        },
+        {
+            "title": "Newton's Second Law of Motion",
+            "description": "Describes the relationship between force, mass, and acceleration.",
+            "expression": "F = ma"
+        },
+        {
+            "title": "Gaussian Integral",
+            "description": "Calculates the integral of the Gaussian function.",
+            "expression": "\\int_{-\\infty}^{\\infty} e^{-x^2} \\, dx = \\sqrt{\\pi}"
+        }
+    ],
+    "Physics": [
+        {}
+    ],
+    "Chemistry": [
+        {}
+    ]
+}
