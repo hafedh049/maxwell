@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:maxwell/utils/globals.dart';
 
@@ -25,15 +26,15 @@ class _ItemState extends State<Item> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Flexible(child: Math.tex(widget.item["title"], fontSize: 16, color: pink)),
+                Flexible(child: Math.tex(widget.item["title"], textStyle: const TextStyle(fontSize: 16, color: white))),
                 const SizedBox(height: 10),
-                Flexible(child: Math.tex(widget.item["expression"], fontSize: 14, color: white)),
+                Flexible(child: Math.tex(widget.item["expression"], textStyle: const TextStyle(fontSize: 14, color: white))),
                 if (!_isOpened)
                   ...AnimateList(
                     effects: <Effect>[const FadeEffect()],
                     children: <Widget>[
                       const SizedBox(height: 10),
-                      Flexible(child: Math.tex(widget.item["description"], fontSize: 12, color: white)),
+                      Flexible(child: Math.tex(widget.item["description"], textStyle: const TextStyle(fontSize: 12, color: white))),
                     ],
                   ),
               ],
