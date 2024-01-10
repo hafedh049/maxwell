@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:maxwell/utils/globals.dart';
+import 'package:webview_flutter_android/webview_flutter_android.dart';
 
 class Viewer extends StatefulWidget {
   const Viewer({super.key, required this.expression});
@@ -10,6 +11,15 @@ class Viewer extends StatefulWidget {
 }
 
 class _ViewerState extends State<Viewer> {
+  late final WebViewController _controller;
+  @override
+  void initState() {
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(transparent);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +28,7 @@ class _ViewerState extends State<Viewer> {
         leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Bootstrap.chevron_left, size: 15, color: pink)),
         title: const Text("Viewer", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: pink)),
       ),
+      body: WebViewWidget(controller: _controller..loadRequest(Uri.parse('https://flutter.dev'))),
     );
   }
 }
