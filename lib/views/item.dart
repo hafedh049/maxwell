@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:latext/latext.dart';
 import 'package:maxwell/utils/globals.dart';
@@ -25,9 +26,17 @@ class _ItemState extends State<Item> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Flexible(child: LaTexT(laTeXCode: Text(widget.item["title"], style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: pink)))),
+                Flexible(child: LaTexT(laTeXCode: Text(widget.item["title"], style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: pink)))),
                 const SizedBox(height: 10),
-                Flexible(child: LaTexT(laTeXCode: Text(widget.item["expression"], style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: white)))),
+                Flexible(child: LaTexT(laTeXCode: Text(widget.item["expression"], style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: white)))),
+                if (!_isOpened)
+                  ...AnimateList(
+                    effects: <Effect>[const FadeEffect()],
+                    children: <Widget>[
+                      const SizedBox(height: 10),
+                      Flexible(child: LaTexT(laTeXCode: Text(widget.item["description"], style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: white)))),
+                    ],
+                  ),
               ],
             ),
           ),
