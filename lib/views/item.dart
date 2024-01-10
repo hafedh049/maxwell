@@ -28,7 +28,7 @@ class _ItemState extends State<Item> {
               children: <Widget>[
                 Flexible(child: LaTexT(laTeXCode: Text(widget.item["title"], style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: pink)))),
                 const SizedBox(height: 10),
-                Flexible(child: LaTexT(laTeXCode: Text(r"\\alpha", style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: white)))),
+                Flexible(child: LaTexT(laTeXCode: Text(r'^\\e$', style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: white)))),
                 if (!_isOpened)
                   ...AnimateList(
                     effects: <Effect>[const FadeEffect()],
