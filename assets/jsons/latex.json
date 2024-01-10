@@ -26,6 +26,83 @@
             "expression": "\\int_{-\\infty}^{\\infty} e^{-x^2} \\, dx = \\sqrt{\\pi}"
         }
     ],
-    "Physics": [],
-    "Chemistry": []
+    "Physics": [
+        {
+            "title": "Newton's Law of Universal Gravitation",
+            "description": "Describes the gravitational attraction between two masses.",
+            "expression": "F = G \\frac{m_1 m_2}{r^2}"
+        },
+        {
+            "title": "Einstein's Mass-Energy Equivalence",
+            "description": "Relates mass and energy in the context of relativity.",
+            "expression": "E = mc^2"
+        },
+        {
+            "title": "Ohm's Law",
+            "description": "Defines the relationship between voltage, current, and resistance in a conductor.",
+            "expression": "V = IR"
+        },
+        {
+            "title": "Maxwell's Equations",
+            "description": "A set of fundamental equations describing electromagnetic phenomena.",
+            "expression": "\\nabla \\cdot E = \\frac{\\rho}{\\varepsilon_0}, \\nabla \\cdot B = 0, \\nabla \\times E = -\\frac{\\partial B}{\\partial t}, \\nabla \\times B = \\mu_0 J + \\mu_0 \\varepsilon_0 \\frac{\\partial E}{\\partial t}"
+        },
+        {
+            "title": "Schrodinger's Equation",
+            "description": "Fundamental equation in quantum mechanics describing the wave function of a quantum system.",
+            "expression": "i\\hbar\\frac{\\partial}{\\partial t} \\Psi(\\mathbf{r},t) = -\\frac{\\hbar^2}{2m}\\nabla^2 \\Psi(\\mathbf{r},t) + V(\\mathbf{r},t)\\Psi(\\mathbf{r},t)"
+        }
+    ],
+    "Chemistry": [
+        {
+            "title": "Ideal Gas Law",
+            "description": "Relates the pressure, volume, and temperature of an ideal gas.",
+            "expression": "PV = nRT"
+        },
+        {
+            "title": "Henderson-Hasselbalch Equation",
+            "description": "Relates the pH of a buffer solution to the pKa and the ratio of the concentrations of the conjugate acid and base.",
+            "expression": "pH = pKa + \\log\\left(\\frac{[A^-]}{[HA]}\\right)"
+        },
+        {
+            "title": "Nernst Equation",
+            "description": "Relates the equilibrium potential of a cell to the concentrations of its ions.",
+            "expression": "E = E^0 - \\frac{RT}{nF} \\ln\\left(\\frac{[Ox]}{[Red]}\\right)"
+        },
+        {
+            "title": "Gibbs Free Energy",
+            "description": "Describes the thermodynamic potential of a system to do work.",
+            "expression": "\\Delta G = \\Delta H - T\\Delta S"
+        },
+        {
+            "title": "Arrhenius Equation",
+            "description": "Describes the temperature dependence of reaction rates.",
+            "expression": "k = A e^{-\\frac{E_a}{RT}}"
+        },
+        {
+            "title": "Hess's Law",
+            "description": "States that the change in enthalpy in a chemical reaction is independent of the pathway between the initial and final states.",
+            "expression": "\\Delta H = \\sum \\Delta H_{\\text{products}} - \\sum \\Delta H_{\\text{reactants}}"
+        },
+        {
+            "title": "Beer-Lambert Law",
+            "description": "Describes the relationship between the absorption of light and the properties of the material through which the light is traveling.",
+            "expression": "A = \\varepsilon \\cdot c \\cdot d"
+        },
+        {
+            "title": "Pauli Exclusion Principle",
+            "description": "States that no two identical fermions can occupy the same quantum state simultaneously.",
+            "expression": "\\text{For fermions: } \\Psi(\\mathbf{r}_1, \\sigma_1; \\mathbf{r}_2, \\sigma_2) = -\\Psi(\\mathbf{r}_2, \\sigma_2; \\mathbf{r}_1, \\sigma_1)"
+        },
+        {
+            "title": "Avogadro's Law",
+            "description": "States that equal volumes of gases, at the same temperature and pressure, contain the same number of molecules.",
+            "expression": "\\frac{V_1}{n_1} = \\frac{V_2}{n_2}"
+        },
+        {
+            "title": "Law of Conservation of Mass",
+            "description": "States that the mass of an isolated system remains constant over time.",
+            "expression": "\\text{Total mass of products} = \\text{Total mass of reactants}"
+        }
+    ]
 }

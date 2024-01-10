@@ -27,7 +27,7 @@ class _ItemState extends State<Item> {
               children: <Widget>[
                 Flexible(child: Text(widget.item["title"], style: const TextStyle(fontSize: 16, color: white, fontWeight: FontWeight.w500))),
                 const SizedBox(height: 10),
-                Flexible(child: Math.tex(widget.item["expression"], textStyle: const TextStyle(fontSize: 16, color: white, fontWeight: FontWeight.w500))),
+                Flexible(child: SingleChildScrollView(scrollDirection: Axis.horizontal, child: Math.tex(widget.item["expression"], textStyle: const TextStyle(fontSize: 16, color: white, fontWeight: FontWeight.w500)))),
                 if (_isOpened) ...<Widget>[
                   const SizedBox(height: 10),
                   Flexible(child: Text(widget.item["description"], style: const TextStyle(fontSize: 12, color: white, fontWeight: FontWeight.w500))),

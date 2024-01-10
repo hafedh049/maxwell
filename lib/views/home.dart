@@ -34,10 +34,8 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(color: grey.withOpacity(.1), border: Border.all(color: grey, width: .5), borderRadius: BorderRadius.circular(15)),
                     padding: const EdgeInsets.all(8),
                     child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Flexible(child: Text(data.keys.elementAt(index), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: pink))),
-                        const SizedBox(width: 10),
+                        Expanded(child: Text(data.keys.elementAt(index), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: pink))),
                         const Icon(Bootstrap.chevron_right, size: 15, color: pink),
                       ],
                     ),
