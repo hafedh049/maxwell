@@ -3,6 +3,7 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:maxwell/utils/globals.dart';
 import 'package:maxwell/utils/methods.dart';
 import 'package:maxwell/views/empty.dart';
+import 'package:maxwell/views/lister.dart';
 import 'package:maxwell/views/loading_screen.dart';
 import 'package:maxwell/views/red_screen.dart';
 
@@ -27,20 +28,14 @@ class _HomeState extends State<Home> {
                 padding: const EdgeInsets.all(16),
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) => GestureDetector(
-                  onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => )),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Lister(title: data.keys.elementAt(index), items: data.values.elementAt(index)))),
                   child: Container(
                     decoration: BoxDecoration(color: grey.withOpacity(.1), border: Border.all(color: grey, width: .5), borderRadius: BorderRadius.circular(15)),
                     padding: const EdgeInsets.all(8),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[Flexible(child: Text(data.keys.elementAt(index), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: pink))), const SizedBox(height: 10)],
-                          ),
-                        ),
+                        Flexible(child: Text(data.keys.elementAt(index), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: pink))),
                         const SizedBox(width: 10),
                         const Icon(Bootstrap.chevron_right, size: 15, color: pink),
                       ],
